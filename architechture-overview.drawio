@@ -1,0 +1,39 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="tXSp05I8WHC4gQw0im4t">
+    <mxGraphModel dx="678" dy="877" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Virtual Network (VNet)&lt;/div&gt;&lt;div&gt;10.0.0.0/16&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="170" x="350" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-6" edge="1" parent="1" source="RIClTvr7UJhrRDjB6T-6-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="RIClTvr7UJhrRDjB6T-6-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-7" connectable="0" parent="RIClTvr7UJhrRDjB6T-6-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" value="&lt;div&gt;Allowed Traffic&lt;/div&gt;&lt;div&gt;(Ports 80/443)&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.02" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;div align=&quot;justify&quot;&gt;Web Subnet (snet-web0 -- 10.0.1.0/24&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;NSG: nsg-web&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="360" x="260" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-11" edge="1" parent="1" source="RIClTvr7UJhrRDjB6T-6-5" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="RIClTvr7UJhrRDjB6T-6-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;div align=&quot;justify&quot;&gt;App Subnet (snet-app) -- 10.0.2.0/24&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;NSG: nsg-app&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;[ VM: vm-app-01 ] ---- Private Endpoint&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;(10.0.2.5)&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;   (10.0.2.4)&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="360" x="260" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-13" edge="1" parent="1" source="RIClTvr7UJhrRDjB6T-6-8" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="RIClTvr7UJhrRDjB6T-6-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="&lt;div align=&quot;justify&quot;&gt;Mgmt Subnet (snet-mgmt) -- 10.0.3.0/24&lt;/div&gt;&lt;div align=&quot;justify&quot;&gt;NSG: nsg-mgmt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="360" x="260" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="RIClTvr7UJhrRDjB6T-6-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Azure Blob Storage Account&lt;/div&gt;(Public Access Disable)" vertex="1">
+          <mxGeometry height="50" width="170" x="355" y="830" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
