@@ -73,7 +73,7 @@ Verifying packet delivery path from application VM (`10.0.2.5`) to Storage Accou
 * **Route Table:** `System Route`
 * **Technical Proof:** Confirms zero-internet exposure; traffic is natively encapsulated and delivered across Azure backbone routing tables.
 
-![Next Hop Diagnostics Screenshot](https://via.placeholder.com/800x400?text=Network+Watcher+-+Next+Hop+PrivateEndpoint+Verification)
+![Next Hop Diagnostics Screenshot](./screenshots/next_hop.png)
 
 ---
 
