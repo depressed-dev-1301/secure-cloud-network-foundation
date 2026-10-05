@@ -1,2 +1,52 @@
-# secure-cloud-network-foundation
-A secure, zero-trust Azure network setup using micro-segmentation, Private Endpoints, and Network Watcher—built entirely within free-tier cost limits.
+# Azure Secure Cloud Network Foundation
+
+An enterprise-grade, zero-trust network infrastructure built on Microsoft Azure. This project demonstrates core competencies in cloud networking, micro-segmentation, identity and access management (IAM), PaaS service isolation via Private Endpoints, and diagnostic troubleshooting using Azure Network Watcher—engineered entirely within strict cost-protection and free-tier boundaries.
+
+---
+
+## Architecture Overview
+
+The topology implements a 3-tier segmented Virtual Network (`10.0.0.0/16`) designed to enforce least-privilege traffic flow and eliminate public IP exposure for sensitive backend and PaaS resources.
+
+```
+                  +-------------------------------------------------------+
+                  |               Virtual Network (VNet)                  |
+                  |                   10.0.0.0/16                         |
+                  |                                                       |
+                  |   +-----------------------------------------------+   |
+                  |   | Web Subnet (snet-web) -- 10.0.1.0/24         |   |
+                  |   | NSG: nsg-web                                  |   |
+                  |   +-----------------------+-----------------------+   |
+                  |                           |                           |
+                  |                     Allowed Traffic                   |
+                  |                      (Ports 80/443)                   |
+                  |                           |                           |
+                  |   +-----------------------v-----------------------+   |
+                  |   | App Subnet (snet-app) -- 10.0.2.0/24         |   |
+                  |   | NSG: nsg-app                                  |   |
+                  |   |                                               |   |
+                  |   |  [ VM: vm-app-01 ] ---- Private Endpoint ---+   |
+                  |   |    (10.0.2.5)               (10.0.2.4)       |  |
+                  |   +-----------------------------------|-----------+   |
+                  |                                       |               |
+                  |   +-----------------------------------|-----------+   |
+                  |   | Mgmt Subnet (snet-mgmt) -- 10.0.3.0/24    |   |
+                  |   | NSG: nsg-mgmt                     |           |   |
+                  |   +-----------------------------------|-----------+   |
+                  +---------------------------------------|---------------+
+                                                          |
+                                           +--------------v--------------+
+                                           | Azure Blob Storage Account  |
+                                           |  (Public Access Disabled)   |
+                                           +-----------------------------+
+```
+
+### Network Topology Details
+* **Virtual Network:** `vnet-foundation-eastus` (`10.0.0.0/16`)
+* **Subnets:**
+  * `snet-web` (`10.0.1.0/24`) — Public-facing web tier / ingress boundary.
+  * `snet-app` (`10.0.2.0/24`) — Isolated application logic tier housing compute resources.
+  * `snet-mgmt` (`10.0.3.0/24`) — Dedicated management and jumpbox subnet.
+* **Storage Isolation:** Private Endpoint (`10.0.2.4`) attached to `stnetfoundation` Blob service with public access completely disabled.
+
+---
