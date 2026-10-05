@@ -8,7 +8,7 @@ An enterprise-grade, zero-trust network infrastructure built on Microsoft Azure.
 
 The topology implements a 3-tier segmented Virtual Network (`10.0.0.0/16`) designed to enforce least-privilege traffic flow and eliminate public IP exposure for sensitive backend and PaaS resources.
 
-![Architecture Diagram](secure-cloud-network-foundation/screenshots/network-architecture.draw.io.svg)
+![Architecture Diagram](secure-cloud-network-foundation/screenshots/network-architecture.draw.io)
 
 ### Network Topology Details
 * **Virtual Network:** `vnet-foundation-eastus` (`10.0.0.0/16`)
